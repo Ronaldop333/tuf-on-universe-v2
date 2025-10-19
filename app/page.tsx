@@ -1,10 +1,6 @@
-
 export default function Home() {
   return (
     <>
-      {/* 3D Scene */}
-      <Scene />
-
       <div className="relative min-h-screen">
 
         {/* Header */}
