@@ -1,9 +1,9 @@
-// app/layout.tsx
 import './globals.css'
 
 export const metadata = {
   title: 'TUF-on Universe – Universal Flow Theory',
-  description: 'Scientific portal exploring the limits of conventional physics through the Universal Flow Theory.',
+  description:
+    'Scientific portal exploring the limits of conventional physics through the Universal Flow Theory.',
   metadataBase: new URL('https://tuf-on.com'),
   openGraph: {
     title: 'TUF-on Universe',
@@ -28,12 +28,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className="font-inter text-white relative min-h-screen antialiased bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: "url('/space-bg.jpg')" }}
-      >
-        {children}
+      <body className="font-inter text-white relative min-h-screen antialiased">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-no-repeat bg-cover bg-center z-0"
+          style={{ backgroundImage: "url('/space-bg.jpg')" }}
+        />
+        
+        {/* Optional dark overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-10" />
+
+        {/* Main content above background */}
+        <div className="relative z-20">{children}</div>
       </body>
     </html>
   )
-} 
+}
